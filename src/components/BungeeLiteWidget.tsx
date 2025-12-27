@@ -28,7 +28,7 @@ const USDC_BASE_MAINNET = '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913';
 
 // JustFlip Theme
 const justFlipTheme = {
-    width: 420 as const,
+    width: 'full' as const,
     borderRadius: 'lg' as const,
     fonts: {
         primary: 'Space Grotesk, Inter, sans-serif',
