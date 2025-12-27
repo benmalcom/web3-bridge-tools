@@ -1,7 +1,7 @@
 /**
  * BungeeLiteWidget - Bungee Lite Widget with JustFlip Theming
  * Uses @socket.tech/bungee package for seamless integration
- * Note: Requires Vercel deployment (localhost blocked by Cloudflare)
+ * Note: Mainnet only
  */
 
 import { useRef } from 'react';
@@ -29,7 +29,6 @@ const USDC_BASE_MAINNET = '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913';
 // JustFlip Theme
 const justFlipTheme = {
     width: 'full' as const,
-    borderRadius: 'lg' as const,
     fonts: {
         primary: 'Space Grotesk, Inter, sans-serif',
         secondary: 'Space Grotesk, Inter, sans-serif',
@@ -75,14 +74,8 @@ export default function BungeeLiteWidget({ onBack }: BungeeLiteWidgetProps) {
     const bungeeRef = useRef<BungeeImperativeAPIType>(null);
     const { login, authenticated } = usePrivy();
 
-    // Use proxy in development to bypass CORS/Cloudflare
-    // In production (Vercel), requests go through /api/bungee-proxy
-    const isDev = import.meta.env.DEV;
-    const baseUrl = isDev ? '/bungee-api' : '/api/bungee-proxy';
-
     const config: BungeeConfig = {
         apiKey: BUNGEE_API_KEY,
-        baseUrl,
         theme: justFlipTheme,
         initialValues: {
             toChain: BASE_MAINNET_ID,
@@ -164,10 +157,7 @@ export default function BungeeLiteWidget({ onBack }: BungeeLiteWidgetProps) {
             {/* Bungee Widget */}
             <Box
                 bg="#101518"
-                borderRadius="16px"
-                border="1px solid rgba(255, 255, 255, 0.1)"
                 overflow="hidden"
-                p={0}
             >
                 <Bungee config={config} ref={bungeeRef} />
             </Box>

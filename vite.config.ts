@@ -9,15 +9,4 @@ export default defineConfig({
             '@': '/src',
         },
     },
-    server: {
-        proxy: {
-            // Proxy Bungee API requests to bypass CORS in development
-            '/bungee-api': {
-                target: 'https://backend.bungee.exchange',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/bungee-api/, ''),
-                secure: true,
-            },
-        },
-    },
 });
