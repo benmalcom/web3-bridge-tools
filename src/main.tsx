@@ -8,8 +8,6 @@ import { base, baseSepolia, mainnet, sepolia, optimism, arbitrum, polygon } from
 import { RelayKitProvider } from '@relayprotocol/relay-kit-ui';
 import { convertViemChainToRelayChain, MAINNET_RELAY_API, TESTNET_RELAY_API } from '@relayprotocol/relay-sdk';
 import '@relayprotocol/relay-kit-ui/styles.css';
-import '@socket.tech/bungee/styles.css';
-import '@socket.tech/bungee/fonts.css';
 
 import App from './App';
 import { system } from './theme';
