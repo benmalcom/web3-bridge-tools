@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 import HomePage, {type BridgeProvider } from './components/HomePage';
 import RelayWidget from './components/RelayWidget';
-import BungeeLiteWidget from './components/BungeeLiteWidget';
+import LiFiWidgetComponent from './components/LiFiWidget';
 
 function App() {
     const [selectedProvider, setSelectedProvider] = useState<BridgeProvider | null>(null);
@@ -30,8 +30,8 @@ function App() {
                     <RelayWidget onBack={handleBack} />
                 )}
 
-                {selectedProvider === 'bungee' && (
-                    <BungeeLiteWidget onBack={handleBack} />
+                {selectedProvider === 'lifi' && (
+                    <LiFiWidgetComponent onBack={handleBack} />
                 )}
             </Box>
         </Flex>
