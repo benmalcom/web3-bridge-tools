@@ -24,7 +24,7 @@ export const globalStyles = {
     margin: 0,
     padding: 0,
     overflow: 'hidden',
-    bg: 'brand.black',
+    bg: '#1F2429',
     color: 'brand.white',
     transition: 'background-color 0.3s ease',
     WebkitFontSmoothing: 'antialiased',

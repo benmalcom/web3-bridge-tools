@@ -5,6 +5,8 @@
 // Hook
 export { useWallet } from './useWallet';
 export type { UseWalletReturn } from './useWallet';
+export {useFundingState} from '../../hooks/useFundingState.ts';
+export type { FundingState, FundingStatus } from '../../hooks/useFundingState.ts';
 
 
 // Config
